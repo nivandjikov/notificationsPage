@@ -1,0 +1,191 @@
+@font-face {
+    font-family: PlusJacarta;
+    src: url(../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+$lightBlue: #f9fafe;
+$notifBlue: #f6fafd;
+$notifBlueHover: #f1f5f8;
+$linkBLue: #053381;
+$blackBLue: #3c3c44;
+
+$lightTextGray: #9294a0;
+$darkTextGray: #545768;
+
+
+
+body{
+    background-color: $lightBlue;
+    font-family: PlusJacarta, Arial, Helvetica, sans-serif;
+
+    img{
+        max-width: 100%;
+    }
+
+    .text-xs{font-size: 0.75rem;line-height: 1rem;}
+    .text-sm{font-size: 0.875rem; line-height: 1.25rem;}
+    .text-base{font-size: 1rem; line-height: 1.5rem;}
+    .text-lg{font-size: 1.125rem; line-height: 1.75rem;}
+    .text-xl{font-size: 1.25rem; line-height: 1.75rem;}
+    .text-2xl{font-size: 1.5rem; line-height: 2rem;}
+    .text-3xl{font-size: 1.875rem; line-height: 2.25rem;}
+    .text-4xl{font-size: 2.25rem; line-height: 2.5rem;}
+    .text-5xl{font-size: 3rem; line-height: 1;}
+    .text-6xl{font-size: 3.75rem; line-height: 1;}
+    .text-7xl{font-size: 4.5rem; line-height: 1.1;}
+    .text-8xl{font-size: 6rem; line-height: 1;}
+
+    .ntWindow{
+        max-width: 768px;
+        margin: 25px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 15px;
+        .topMenu{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            .ntCounter{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                pointer-events: none;
+                color: $blackBLue;
+                span{
+                    display: block;
+                    padding: 5px 15px;
+                    text-align: center;
+                    background-color: $linkBLue;
+                    color: white;
+                    border-radius: 5px;
+                }
+            }
+            .markAll{
+                cursor: pointer;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+            }
+            .markAll:hover{
+                color: $linkBLue;
+            }
+        }
+        .ntStream{
+            .nt{
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 15px;
+                padding: 15px;
+                border-radius: 15px;
+                margin-bottom: 10px;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 150ms;
+                cursor: pointer;
+                .profilePic, .yourPostPic{
+                    width: 70px;
+                    flex-shrink: 0;
+                }
+                .yourPostPic{
+                    margin-left: auto;
+                }
+                .text{
+                    text-align: left;
+                    vertical-align: middle;
+                    .ntHeading{
+                        font-weight: normal;
+                        color: $lightTextGray;
+                        margin: 2px 0;
+                        .profileName{
+                            color: $blackBLue;
+                            font-weight: bold;
+                        }
+                        .postName{
+                            color: $darkTextGray;
+                            font-weight: bold;
+                        }
+                        .groupName{
+                            color: $linkBLue;
+                            font-weight: bold;
+                        }
+                    }
+                    .ntTime{
+                        color: $lightTextGray;
+                        margin-top: 0;
+                    }
+                    .ntMessage{
+                        padding: 15px;
+                        border: 1px solid $lightTextGray;
+                        color: $lightTextGray;
+                        border-radius: 15px;
+                    }
+                }
+
+            }
+            .nt:hover{
+                background-color: $notifBlueHover;
+            }
+            .ntNew{
+                background-color: $notifBlue;
+                .text{
+                    .ntHeading::after{
+                        content: "";
+                        display: inline-block;
+                        margin-left: 5px;
+                        margin-bottom: 1px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 100%;
+                        background-color: #d06064;
+                        vertical-align: baseline;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    body{
+
+        .text-sm{font-size: 0.75rem;line-height: 1rem;}
+        .text-base{font-size: 0.875rem; line-height: 1.25rem;}
+        .text-lg{font-size: 1rem; line-height: 1.5rem;}
+        .text-xl{font-size: 1.125rem; line-height: 1.75rem;}
+        .text-2xl{font-size: 1.25rem; line-height: 1.75rem;}
+        .text-3xl{font-size: 1.5rem; line-height: 2rem;}
+        .text-4xl{font-size: 1.875rem; line-height: 2.25rem;}
+        .text-5xl{font-size: 2.25rem; line-height: 2.5rem;}
+        .text-6xl{font-size: 3rem; line-height: 1;}
+        .text-7xl{font-size: 3.75rem; line-height: 1;}
+        .text-8xl{font-size: 4.5rem; line-height: 1.1;}
+        
+        .ntWindow{
+            padding: 15px;
+            .topMenu{
+                .ntCounter{
+                    gap: 5px;
+                    h1{
+                        font-size: 1.25rem; line-height: 1.75rem;
+                    }
+                    span{
+                        font-size: 0.875rem; line-height: 1.25rem;
+                        padding: 2px 8px;
+                    }
+                }
+            }
+            .ntStream{
+                .nt{
+                    .profilePic, .yourPostPic{
+                        width: 50px;
+                    }
+                }
+            }
+        }
+
+    }
+}

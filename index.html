@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Notifications page</title>
+</head>
+<body>
+
+    <div class="ntWindow">
+        <section class="topMenu">
+            <div class="ntCounter">
+                <h1 class="text-4xl">Notifications</h1>
+                <span class="counterNumber text-xl"></span>
+            </div>
+            <div class="markAll text-base">
+                Mark all as read
+            </div>
+        </section>
+        <section class="ntStream">
+            <article class="nt ntNew">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-mark-webber.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Mark Webber</span> reacted to your recent post <span class="postName">My first tournament today!</span></h2>
+                    <p class="ntTime text-base">
+                        1m ago
+                    </p>
+                </div>
+            </article>
+            <article class="nt ntNew">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-angela-gray.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Angela Gray</span> followed you</h2>
+                    <p class="ntTime text-base">
+                        5m ago
+                    </p>
+                </div>
+            </article>
+            <article class="nt ntNew">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-jacob-thompson.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Jacob Thompson</span> has joined your group <span class="groupName">Chess Club</span></h2>
+                    <p class="ntTime text-base">
+                        1 day ago
+                    </p>
+                </div>
+            </article>
+            <article class="nt ">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Rizky Hasanuddin</span> sent you a private message</h2>
+                    <p class="ntTime text-base">
+                        5 days ago
+                    </p>
+                    <p class="ntMessage text-base">
+                        Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
+                    </p>
+                </div>
+            </article>
+            <article class="nt ">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-kimberly-smith.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Kimberly Smith</span> commented on your picture</h2>
+                    <p class="ntTime text-base">
+                        1 week ago
+                    </p>
+                </div>
+                <div class="yourPostPic">
+                    <img src="assets/images/image-chess.webp" alt="">
+                </div>
+            </article>
+            <article class="nt ">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-nathan-peterson.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Nathan Peterson</span> reacted to your recent post <span class="postName">5 end-game strategies to increase your win rate</span></h2>
+                    <p class="ntTime text-base">
+                        2 weeks ago
+                    </p>
+                </div>
+            </article>
+            <article class="nt ">
+                <div class="profilePic">
+                    <img src="assets/images/avatar-anna-kim.webp" alt="">
+                </div>
+                <div class="text">
+                    <h2 class="ntHeading text-base"><span class="profileName">Anna Kim</span> left the group <span class="groupName">Chess Club</span></h2>
+                    <p class="ntTime text-base">
+                        2 weeks ago
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    
+
+</body>
+</html>
+
+<script>
+    var counterNumber = document.querySelector(".counterNumber");
+    var newNotifications = document.querySelectorAll(".ntNew");
+    var notifications = document.querySelectorAll(".ntNew").length;
+    var markAllBtn = document.querySelector(".markAll");
+
+
+    function setCounterNumber() {
+        counterNumber.innerHTML = notifications;
+    }
+    setCounterNumber();
+    
+    function readNewNotifications() {
+        newNotifications.forEach(function(element) {
+            element.classList.remove("ntNew");
+            notifications--;
+        });
+        setCounterNumber();
+        if (notifications < 1){
+            counterNumber.remove();
+        }
+    }
+    markAllBtn.addEventListener("click", readNewNotifications)
+
+</script>
